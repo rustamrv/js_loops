@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+          <div
+            class="position-sticky d-flex flex-column justify-content-center align-items-center"
+          >
+            <ul class="nav flex-column text-center w-100">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  Мінімум
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Норма </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Максимум </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="col-md-9 col-lg-10 main-content" id="mainContent">
+          <h1 class="text-center mb-4">Home work</h1>
+          <section class="mb-4" id="min">
+            <h2>Мінімум</h2>
+            <section class="mb-4">
+              <h5>
+                Запитай у користувача його вік і визначи, ким він є: дитиною
+                (0-11), підлітком (12-17), дорослим (18_59) або пенсіонером (60
+                ...), передбач можливість введення невірних даних.
+              </h5>
+              <div class="me-5 mb-3">
+                <input
+                  type="number"
+                  id="years"
+                  class="form-control me-3 mb-3"
+                  placeholder="Введіть вік"
+                />
+              </div>
+
+              <button class="btn btn-primary mt-2" onclick="calculateYears()">
+                Обчислити
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>
+                Запитай у користувача число від 0 до 9 і виведи йому спецсимвол,
+                який розташований на цій клавіші (1 !, 2 @, 3 # і т. д)
+              </h5>
+
+              <div class="me-5 mb-3">
+                <input
+                  type="number"
+                  id="number"
+                  class="form-control me-3 mb-3"
+                  placeholder="Введіть число"
+                />
+              </div>
+
+              <button class="btn btn-primary mt-2" onclick="calculateSymbol()">
+                Обчислити
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>
+                Підрахуй суму всіх чисел в заданому користувачем діапазоні.
+              </h5>
+
+              <div class="me-5 mb-3">
+                <input
+                  type="number"
+                  id="start_for_sum"
+                  class="form-control me-3 mb-3"
+                  placeholder="Діапазоні числа від "
+                />
+                <input
+                  type="number"
+                  id="finish_for_sum"
+                  class="form-control me-3 mb-3"
+                  placeholder="Діапазоні числа до "
+                />
+              </div>
+
+              <button
+                class="btn btn-primary mt-2"
+                onclick="calculateSumNumber()"
+              >
+                Обчислити
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>
+                Запитай у користувача 2 числа і знайди найбільший спільний
+                дільник.
+              </h5>
+
+              <div class="me-5 mb-3">
+                <input
+                  type="number"
+                  id="first_number"
+                  class="form-control me-3 mb-3"
+                  placeholder="Перше число"
+                />
+                <input
+                  type="number"
+                  id="second_number"
+                  class="form-control me-3 mb-3"
+                  placeholder="Друге число"
+                />
+              </div>
+
+              <button
+                class="btn btn-primary mt-2"
+                onclick="calculateFindMaxDiv()"
+              >
+                Обчислити
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>
+                Запитай у користувача число і виведи всі дільники цього числа.
+              </h5>
+
+              <div class="me-5 mb-3">
+                <input
+                  type="number"
+                  id="div_number"
+                  class="form-control me-3 mb-3"
+                  placeholder="Введіть число"
+                />
+              </div>
+
+              <button class="btn btn-primary mt-2" onclick="findDivisors()">
+                Обчислити
+              </button>
+            </section>
+          </section>
+
+          <section class="mb-4" id="norma" style="display: none">
+            <h2>Норма</h2>
+
+            <section class="mb-4">
+              <h5>
+                Запитай у користувача п’ятизначне число і визначи, чи є воно
+                паліндромом.
+              </h5>
+              <div class="me-5 mb-3">
+                <input
+                  type="number"
+                  id="palindrome_number"
+                  class="form-control me-3 mb-3"
+                  placeholder="Введіть п’ятизначне число"
+                />
+              </div>
+              <button class="btn btn-primary mt-2" onclick="checkPalindrome()">
+                Перевірити
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>
+                Запитай у користувача суму покупки і виведи суму до оплати зі
+                знижкою.
+              </h5>
+              <div class="me-5 mb-3">
+                <input
+                  type="number"
+                  id="purchase_sum"
+                  class="form-control me-3 mb-3"
+                  placeholder="Введіть суму покупки"
+                />
+
+                
+              </div>
+              <button
+                class="btn btn-primary mt-2"
+                onclick="calculateDiscount()"
+              >
+                Розрахувати
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>
+                Запитай у користувача 10 чисел і порахуй статистику (додатні,
+                від’ємні, нулі, парні, непарні).
+              </h5>
+              <div class="me-5 mb-3">
+                <textarea
+                  id="ten_numbers"
+                  class="form-control me-3 mb-3"
+                  placeholder="Введіть 10 чисел через кому"
+                ></textarea>
+              </div>
+              <button
+                class="btn btn-primary mt-2"
+                onclick="calculateStatistics()"
+              >
+                Порахувати
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>Виводь дні тижня циклом, поки користувач не натисне OK.</h5>
+              <button class="btn btn-primary mt-2" onclick="showDaysOfWeek()">
+                Почати
+              </button>
+            </section>
+          </section>
+
+          <section class="mb-4" id="max" style="display: none">
+            <h2>Максимум</h2>
+            <section class="mb-4">
+              <h5>
+                Гра «Вгадай число». Програма буде відгадувати число, яке загадує
+                користувач, за допомогою алгоритму «бінарного пошуку».
+              </h5>
+              <button class="btn btn-primary mt-2" onclick="guessNumberGame()">
+                Почати гру
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>Виведи таблицю множення для чисел від 2 до 9.</h5>
+              <button
+                class="btn btn-primary mt-2"
+                onclick="showMultiplicationTable()"
+              >
+                Показати таблицю
+              </button>
+            </section>
+
+            <section class="mb-4">
+              <h5>
+                Запитай дату (день, місяць, рік) і виведи наступну за нею дату.
+              </h5>
+              <div class="me-5 mb-3">
+                <input
+                  type="date"
+                  id="input_date"
+                  class="form-control me-3 mb-3"
+                  placeholder="Введіть дату"
+                />
+              </div>
+              <button
+                class="btn btn-primary mt-2"
+                onclick="calculateNextDate()"
+              >
+                Порахувати
+              </button>
+            </section>
+          </section>
+
+          <section class="me-5 p-3 bg-white border border-primary">
+            <h4>Результати:</h4>
+            <div id="output"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/js/main.js"></script>
+  <script type="module">
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const minContent = document.getElementById("min");
+    const maxContent = document.getElementById("max");
+    const normaContent = document.getElementById("norma");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        navLinks.forEach((link) => link.classList.remove("active"));
+
+        link.classList.add("active");
+
+        switch (link.textContent.trim()) {
+          case "Норма":
+            normaContent.style = "display: block";
+            maxContent.style = "display: none";
+            minContent.style = "display: none";
+            break;
+          case "Максимум":
+            maxContent.style = "display: block";
+            normaContent.style = "display: none";
+            minContent.style = "display: none";
+            break;
+          default:
+            minContent.style = "display: block";
+            normaContent.style = "display: none";
+            maxContent.style = "display: none";
+            break;
+        }
+      });
+    });
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</html>
